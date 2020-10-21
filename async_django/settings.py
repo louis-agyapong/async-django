@@ -26,18 +26,24 @@ SECRET_KEY = 'wrv_%$^^pm)9o&8vlq74=aso%=^$!^)#zw093_e95(hy%896n8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS:list = []
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    # External apps that needs to go before django
+    # Django modules
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # Local apps
+    'stories',
+    'movies',
+    # External apps
 ]
 
 MIDDLEWARE = [
