@@ -76,9 +76,10 @@ async def main_view_async(request):
     Main view async
     """
     start_time = time.time()
-    task1 = asyncio.ensure_future(get_movies_async())
-    task2 = asyncio.ensure_future(get_stories_async())
-    await asyncio.wait([task1, task2])
+    # task1 = asyncio.ensure_future(get_movies_async())
+    # task2 = asyncio.ensure_future(get_stories_async())
+    # await asyncio.wait([task1, task2])
+    await asyncio.gather(get_movies_async(), get_stories_async())
     total = (time.time() - start_time)
     print('total: ', total)
     return HttpResponse('async')
